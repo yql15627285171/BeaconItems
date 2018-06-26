@@ -1,0 +1,11 @@
+/* pages/airCondition/airCondition.wxss */
+.status{  
+  display: block;  
+  line-height: 70rpx;  
+  margin: 0 20rpx;
+  word-wrap:break-word;  
+}  
+
+.button{
+  margin: 20rpx;
+}

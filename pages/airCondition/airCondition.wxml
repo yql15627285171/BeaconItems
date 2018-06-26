@@ -1,0 +1,27 @@
+<view>
+  <text class="status">适配器状态：{{ status }}</text>  
+  <text class="status">是否搜索：{{ isSearch }}</text>
+  <!-- <view>  
+     <text class="status">接收到消息：{{ receiveData }}</text>   
+  </view>  -->
+  <button type="primary" class="button" bindtap="foundLanya">初始化并搜索</button>
+
+   <view class='deviceList' wx:for="{{searchDeviceList}}" >
+    <view class='device'>
+      <text class="status">设备名称:{{item.name}}</text>  
+      <text class="status">设备ID:{{item.deviceId}}</text> 
+      <text class="status">信号:{{item.RSSI}}</text> 
+      <text class="status">mac:{{macs[index]}}</text>  
+      <text class="status">连接状态:{{connectedDeviceId == item.deviceId?"已连接":"未连接"}}</text>      
+
+      <button type="warn" class="button" id="{{item.deviceId}}" data-index="{{index}}" bindtap="createBLEConnection">连接发数据</button>  
+
+    </view>
+  </view> 
+
+  <view wx:if="{{showParams}}">
+    <text class='status' wx:for="{{paramsNames}}">{{item}}</text>
+    <button type="primary" class="button">设定参数</button>
+  </view>
+
+</view>
